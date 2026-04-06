@@ -2,315 +2,165 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- IMPORTANT (mobile fix) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Aura Studio</title>
 
 <style>
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #111, #000);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#000,#1a1a1a);
     color: white;
+    font-size: 15px;
 }
 
-/* 🔥 INTRO */
-#introScreen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    text-align: center;
-}
-
-/* INTRO TEXT */
-.intro-small {
-    font-size: 16px;
-    opacity: 0.7;
-}
-
-.intro-title {
-    font-size: 42px;
-    margin: 10px 0;
-}
-
-.intro-tag {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-/* BUTTON */
-.enter-btn {
-    background: white;
-    color: black;
-    padding: 15px 40px;
-    border-radius: 40px;
-    margin-top: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.enter-btn:active {
-    transform: scale(0.95);
-}h1 {
-    font-size: 28px;
-}
-
-/* FADE */
-.fade-out {
-    animation: fadeOut 0.6s forwards;
-}
-
-@keyframes fadeOut {
-    to { opacity: 0; visibility: hidden; }
-}
-
-/* MAIN CONTENT */
-#mainContent {
-    display: none;
+/* CENTER CONTAINER */
+.container {
+    max-width: 400px;
+    margin: auto;
     padding: 20px;
 }
 
-/* ===== YOUR DESIGN ===== */
-
+/* TITLE */
 h1 {
-    font-size: 42px;
+    font-size: 28px;
     text-align: center;
+    margin-top: 20px;
 }
 
+/* SUBTEXT */
 .subtitle {
     text-align: center;
-    opacity: 0.7;
-    font-size: 14px;
-}
-
-.desc {
-    text-align: center;
-    opacity: 0.6;
+    color: #aaa;
     font-size: 13px;
     margin-bottom: 20px;
 }
 
-.input {
-    width: 90%;
-    padding: 15px;
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px;
     border-radius: 20px;
     border: none;
-    margin: 15px auto;
-    display: block;
-    background: rgba(255,255,255,0.08);
+    margin-bottom: 20px;
+    background: #222;
     color: white;
 }
 
-.box {
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
+/* CARD */
+.card {
+    background: #111;
     padding: 15px;
-    margin: 12px 0;
-    cursor: pointer;
-}
-
-.top {
+    border-radius: 20px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+/* PRICE */
 .price {
-    background: rgba(255,255,255,0.2);
-    padding: 6px 14px;
+    background: #333;
+    padding: 6px 12px;
     border-radius: 20px;
 }
 
-.desc2 {
-    font-size: 12px;
-    opacity: 0.7;
-}
-
-.selected {
-    border: 2px solid #00ffcc;
-}
-
+/* ORDER BOX */
 .order-box {
-    background: rgba(255,255,255,0.08);
+    background: #111;
+    padding: 15px;
     border-radius: 20px;
-    padding: 20px;
-    margin-top: 20px;
     text-align: center;
+    margin-top: 20px;
 }
 
-.confirm {
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    font-weight: bold;
     background: white;
     color: black;
-    padding: 15px;
-    border-radius: 40px;
-    margin-top: 20px;
-    cursor: pointer;
-    font-weight: bold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔥 INTRO -->
-<div id="introScreen">
-    <div class="intro-small">Welcome</div>
-    <div class="intro-title">AURA STUDIO</div>
-    <div class="intro-tag">
-        Creative editing • Good quality • Best delivery
-    </div>
-
-    <div class="enter-btn" onclick="enterSite()">Book Appointment</div>
-</div>
-
-<!-- 🔥 MAIN -->
-<div id="mainContent">
+<div class="container">
 
 <h1>Aura Studio</h1>
-<div class="subtitle">Creative Editing • Premium Quality • Fast Delivery</div>
-<div class="desc">We provide high-quality video and photo editing services</div>
 
-<input class="input" id="name" placeholder="Your Name">
-
-<!-- ITEMS -->
-<div class="box" onclick="selectItem(this,'Video Editing',79)">
-    <div class="top">
-        <span>Video Editing</span>
-        <span class="price">₹79</span>
-    </div>
-    <div class="desc2">Edit videos like (reels & content)</div>
+<div class="subtitle">
+Creative Editing • Premium Quality • Fast Delivery
 </div>
 
-<div class="box" onclick="selectItem(this,'Premium Video Editing',149)">
-    <div class="top">
-        <span>Premium Video Editing</span>
-        <span class="price">₹149</span>
-    </div>
-    <div class="desc2">Edit with more effects & best quality</div>
+<input type="text" placeholder="Your Name">
+
+<div class="card">
+<span>Video Editing</span>
+<span class="price">₹79</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Photo Editing',69)">
-    <div class="top">
-        <span>Photo Editing</span>
-        <span class="price">₹69</span>
-    </div>
-    <div class="desc2">Best works for your photo</div>
+<div class="card">
+<span>Premium Video Editing</span>
+<span class="price">₹149</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Premium Photo Editing',99)">
-    <div class="top">
-        <span>Premium Photo Editing</span>
-        <span class="price">₹99</span>
-    </div>
-    <div class="desc2">Very quality and best works</div>
+<div class="card">
+<span>Photo Editing</span>
+<span class="price">₹69</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Logo Designing',79)">
-    <div class="top">
-        <span>Logo Designing</span>
-        <span class="price">₹79</span>
-    </div>
-    <div class="desc2">Neat logo for your business</div>
+<div class="card">
+<span>Premium Photo Editing</span>
+<span class="price">₹99</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Premium Logo Designing',129)">
-    <div class="top">
-        <span>Premium Logo Designing</span>
-        <span class="price">₹129</span>
-    </div>
-    <div class="desc2">Best and premium looks</div>
+<div class="card">
+<span>Logo Designing</span>
+<span class="price">₹79</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Poster Making',79)">
-    <div class="top">
-        <span>Poster Making</span>
-        <span class="price">₹79</span>
-    </div>
-    <div class="desc2">Posters for your growth</div>
+<div class="card">
+<span>Premium Logo Designing</span>
+<span class="price">₹129</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Premium Poster Making',99)">
-    <div class="top">
-        <span>Premium Poster Making</span>
-        <span class="price">₹99</span>
-    </div>
-    <div class="desc2">Expensive look and best choice for your startup</div>
+<div class="card">
+<span>Poster Making</span>
+<span class="price">₹79</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Thumbnail Edit',99)">
-    <div class="top">
-        <span>Thumbnail Edit</span>
-        <span class="price">₹99</span>
-    </div>
-    <div class="desc2">Thumbnail for your media growth</div>
+<div class="card">
+<span>Premium Poster Making</span>
+<span class="price">₹99</span>
 </div>
 
-<div class="box" onclick="selectItem(this,'Premium Thumbnail',159)">
-    <div class="top">
-        <span>Premium Thumbnail</span>
-        <span class="price">₹159</span>
-    </div>
-    <div class="desc2">Very quality & impressive</div>
+<div class="card">
+<span>Thumbnail Edit</span>
+<span class="price">₹99</span>
 </div>
 
-<!-- ORDER -->
+<div class="card">
+<span>Premium Thumbnail</span>
+<span class="price">₹159</span>
+</div>
+
 <div class="order-box">
-    <h3>Your Order</h3>
-    <div id="total">Total: ₹0</div>
+<p>Your Order</p>
+<p>Total: ₹0</p>
 </div>
 
-<div class="confirm" onclick="sendOrder()">CONFIRM ORDER</div>
+<button>CONFIRM ORDER</button>
 
 </div>
-
-<script>
-let items = [];
-let total = 0;
-
-function enterSite() {
-    document.getElementById("introScreen").classList.add("fade-out");
-    document.getElementById("mainContent").style.display = "block";
-}
-
-function selectItem(el, name, price) {
-    if (!items.find(i => i.name === name)) {
-        items.push({name, price});
-        total += price;
-        el.classList.add("selected");
-    } else {
-        items = items.filter(i => i.name !== name);
-        total -= price;
-        el.classList.remove("selected");
-    }
-    document.getElementById("total").innerText = "Total: ₹" + total;
-}
-
-function sendOrder() {
-    let name = document.getElementById("name").value;
-
-    if (!name || items.length === 0) {
-        alert("Fill details & select items");
-        return;
-    }
-
-    let msg = "Aura Studio Booking%0A";
-    msg += "Name: " + name + "%0A";
-
-    items.forEach(i => {
-        msg += "- " + i.name + " ₹" + i.price + "%0A";
-    });
-
-    msg += "Total: ₹" + total;
-
-    let phone = "919092130949";
-    window.open(`https://wa.me/${phone}?text=${msg}`);
-}
-</script>
 
 </body>
-  </html>
+</html>
